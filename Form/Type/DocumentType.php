@@ -8,7 +8,6 @@ use Doctrine\Bundle\MongoDBBundle\Form\ChoiceList\MongoDBQueryBuilderLoader;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\Persistence\ObjectManager;
 use InvalidArgumentException;
-use ReturnTypeWillChange;
 use Symfony\Bridge\Doctrine\Form\ChoiceList\EntityLoaderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\DoctrineType;
 use Symfony\Component\OptionsResolver\Options;
@@ -61,13 +60,7 @@ class DocumentType extends DoctrineType
         $resolver->setAllowedTypes('document_manager', ['null', 'string', DocumentManager::class]);
     }
 
-    /**
-     * @internal Symfony 2.8 compatibility
-     *
-     * @return string
-     */
-    #[ReturnTypeWillChange]
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'document';
     }
