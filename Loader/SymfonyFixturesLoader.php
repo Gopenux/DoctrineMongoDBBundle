@@ -84,7 +84,7 @@ final class SymfonyFixturesLoader extends Loader implements SymfonyFixturesLoade
      *
      * @return FixtureInterface
      */
-    protected function createFixture($class)
+    protected function createFixture(string $class): FixtureInterface
     {
         /*
          * We don't actually need to create the fixture. We just
